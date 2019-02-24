@@ -210,3 +210,42 @@ int Board::right_find_nearest0(int row, int col)
         }
         return index;
 }
+
+void Board::random()
+{
+    Board check (1,15);
+        int count = 0;
+        for (int i = 0; i <= 3; i++)
+        {
+            for (int j = 0; j <= 3; j++)
+            {
+                if (board[i][j]->get_value() == 0)
+                {
+                    check.board[0][count]->set_value(i);
+                    check.board[1][count]->set_value(j);
+                    count ++;
+                }
+            }
+        }
+        int position = rand() % (count - 1);
+        int rn = rand() % 9;
+        int next = 0;
+        if (rn <= 8)
+            next = 2;
+        else
+            next = 4;
+        int i = check.board[0][position]->get_value();
+        int j = check.board[1][position]->get_value();
+        board[i][j]->set_value(next);
+}
+
+bool Board::full()
+{
+    for (int i = 0 ; i <= 3; i++)
+            for (int j = 0 ; j <= 3; j++)
+            {
+                if (board[i][j]->get_value() == 0)
+                    return false;
+            }
+        return true;
+}

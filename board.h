@@ -25,5 +25,7 @@ public:
     Board(const Board&);
     virtual ~Board();
     void move(Direction d);
+    void random();
+    bool full();
 };
 #endif // BOARD_H
