@@ -77,8 +77,8 @@ void Board::leftmove()
                 {
                     int index = left_find_nearest0(i,j);
                     if (index != j){
-                        m[i][index] = m[i][j];
-                        m[i][j] = 0;
+                        board[i][index]->set_value(board[i][j]->get_value());
+                        board[i][j]->set_value(0);
                         order = true;
                     }
                 }
@@ -86,7 +86,127 @@ void Board::leftmove()
          }
 }
 
+void Board::rightmove()
+{
+    order = false;
+        for (int i = 0; i <= 3; i++)
+        {
+            for (int j = 3; j >= 1; j--) // start from the right most
+            {
+                if (board[i][j]->get_value() != board[i][j-1]->get_value() && board[i][j-1]->get_value() != 0) // next two are nonempty and not the same
+                    continue;
+                if (board[i][j]->get_value() == 0)
+                    continue;
+                for (int k = j-1; k >= 0; k--)
+                {
+                    if (board[i][j]->get_value() == board[i][k]->get_value())
+                    {
+                        board[i][j]->set_value(2*board[i][j]->get_value());
+                        board[i][k]->set_value(0);
+                        order = true;
+                        break;
+                    }
+                }
+            }
+        }
+        for (int i = 0; i <= 3; i++)
+            {
+                for (int j = 2; j >= 0; j--)
+                {
+                    if (board[i][j]->get_value() == 0)
+                        continue;
+                    else
+                    {
+                        int index = right_find_nearest0(i,j);
+                        if (index != j){
+                            board[i][index]->set_value(board[i][j]->get_value());
+                            board[i][j]->set_value(0) ;
+                            order = true;
+                        }
+                    }
+                }
+            }
+
+}
+
+void Board::upmove()
+{
+    Board A = this -> rotate_counterclock();
+    A.leftmove();
+    *this = A.rotate_clock();
+}
+
+void Board::downmove()
+{
+    Board A = this -> rotate_counterclock();
+    A.rightmove();
+    *this = A.rotate_clock();
+}
+
+Board Board::rotate_clock()
+{
+    for (int i = 0; i <= 3; i++)
+        {
+            for (int j = i; j <= 3; j++)
+            {
+                int tmp = board[j][i]->get_value();
+                board[j][i]->set_value(board[i][j]->get_value());
+                board[i][j]->set_value(tmp);
+            }
+        }
+        for (int i = 0; i <= 3; i++)
+        {
+            for (int j = 0; j <= 1; j++)
+            {
+                int copy = board[i][3-j]->get_value();
+                board[i][3-j]->set_value(board[i][j]->get_value());
+                board[i][j]->set_value(copy);
+            }
+        }
+        return *this;
+}
+
+Board Board::rotate_counterclock()
+{
+    for (int i = 0; i <= 3; i++)
+        {
+            for (int j = i; j <= 3; j++)
+            {
+                int tmp = board[j][i]->get_value();
+                board[j][i]->set_value( board[i][j]->get_value());
+                board[i][j]->set_value(tmp);
+            }
+        }
+        for (int i = 0; i <= 1; i++)
+        {
+            for (int j = 0; j <= 3; j++)
+            {
+                int tmp = board[3-i][j]->get_value();
+                board[3-i][j]->set_value(board[i][j]->get_value());
+                board[i][j]->set_value(tmp);
+            }
+        }
+        return *this;
+}
+
 int Board::left_find_nearest0(int row, int col)
 {
+    int index = col;
+       int i = col - 1;
+       while (i >= 0 && board[row][i]->get_value() == 0){
+           index = i;
+           i--;
+       }
+       return index;
+}
 
+int Board::right_find_nearest0(int row, int col)
+{
+    int index = col;
+        int i = col + 1;
+        while (i <= 3 && board[row][i]->get_value() == 0){
+            index = i;
+            i++;
+        }
+        return index;
 }
