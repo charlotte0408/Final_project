@@ -29,13 +29,15 @@ SOURCES += \
     tile.cpp \
     qgame.cpp \
     board.cpp \
-    game.cpp
+    game.cpp \
+    qtile.cpp
 
 HEADERS += \
     tile.h \
     qgame.h \
     game.h \
-    board.h
+    board.h \
+    qtile.h
 
 FORMS += \
         game.ui
