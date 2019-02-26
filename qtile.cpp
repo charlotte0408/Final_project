@@ -8,7 +8,7 @@ QTile::QTile(Tile* t)
 
 void QTile::draw()
 {
-    //if (tile->get_value() == 2)
+    if (tile == nullptr)
     {
         setText("");
         setStyleSheet("QTile {background- color: yellow, border-width: 10px;}");
