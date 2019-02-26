@@ -10,6 +10,7 @@ class QTile : public QLabel
 {
     Q_OBJECT
 public:
+    QTile(const QString & text);
     QTile(Tile* tile);
     void draw();
 private:
