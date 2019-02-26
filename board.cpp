@@ -2,6 +2,22 @@
 #include "tile.h"
 #include <QVector>
 
+bool Board::get_order()
+{
+    return order;
+}
+
+bool Board::find_2048()
+{
+    for (int i = 0 ; i <= 3; i++)
+            for (int j = 0 ; j <= 3; j++)
+            {
+                if (board[i][j]->get_value() == 2048)
+                    return true;
+            }
+        return false;
+}
+
 Board::Board(int row, int col):order(false)
 {
     board.resize(row+1);

@@ -26,10 +26,16 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        game.cpp
+    tile.cpp \
+    qgame.cpp \
+    board.cpp \
+    game.cpp
 
 HEADERS += \
-        game.h
+    tile.h \
+    qgame.h \
+    game.h \
+    board.h
 
 FORMS += \
         game.ui

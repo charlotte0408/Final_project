@@ -21,11 +21,13 @@ private:
     int left_find_nearest0(int row, int col);
     int right_find_nearest0(int row, int col);
 public:
-    Board(int row, int col);
+    Board(int row = 3, int col = 3);
     Board(const Board&);
     virtual ~Board();
     void move(Direction d);
     void random();
     bool full();
+    bool get_order();
+    bool find_2048();
 };
 #endif // BOARD_H
