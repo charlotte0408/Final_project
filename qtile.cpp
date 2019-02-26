@@ -1,5 +1,6 @@
 #include "tile.h"
 #include "qtile.h"
+#include <QString>
 
 QTile::QTile(Tile* t)
 {
@@ -13,6 +14,8 @@ void QTile::draw()
         setText("");
         setStyleSheet("QTile {background- color: yellow, border-width: 10px;}");
     }
-    this -> show();
+    else {
+        setText(QString::number(tile->get_value()));
+    }
 
 }
