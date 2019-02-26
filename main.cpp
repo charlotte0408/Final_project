@@ -1,4 +1,4 @@
-#include "qgame.h"
+#include "mainwindow.h"
 #include <QApplication>
 #include "tile.h"
 #include "qtile.h"

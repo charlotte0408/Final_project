@@ -27,17 +27,18 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
     tile.cpp \
-    qgame.cpp \
     board.cpp \
     game.cpp \
-    qtile.cpp
+    qtile.cpp \
+    qgameboard.cpp
 
 HEADERS += \
     tile.h \
-    qgame.h \
     game.h \
     board.h \
-    qtile.h
+    qtile.h \
+    mainwindow.h \
+    qgameboard.h
 
 FORMS += \
         game.ui

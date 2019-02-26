@@ -6,7 +6,8 @@ class Tile
 private:
     int value;
 public:
-    Tile(int v = 2):value(v){}
+    Tile():value(0){}
+    Tile(int v):value(v){}
     int get_value();
     void set_value(int v);
 };
