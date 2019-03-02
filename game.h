@@ -17,6 +17,7 @@ public:
     bool isover();
     int get_score();
     void restart();
+    Board* get_board();
 };
 
 #endif // GAME_H

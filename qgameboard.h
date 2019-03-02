@@ -12,7 +12,7 @@ private:
     QVector<QVector<QTile*>> gui_board;
     Game* game;
     QGridLayout* board_layout;
-    void draw();
+    void drawboard();
 public:
     QGameboard(QWidget *parent = nullptr);
     ~QGameboard();

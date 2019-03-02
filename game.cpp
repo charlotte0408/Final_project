@@ -30,3 +30,8 @@ void Game::restart()
     board = new Board();
     score = 0;
 }
+
+Board* Game::get_board()
+{
+    return board;
+}

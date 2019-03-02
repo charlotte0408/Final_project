@@ -265,3 +265,8 @@ bool Board::full()
             }
         return true;
 }
+
+Tile* Board::get_tile(int col, int row)
+{
+    return board[col][row];
+}

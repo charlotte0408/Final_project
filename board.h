@@ -30,5 +30,6 @@ public:
     bool full();
     bool get_order();
     bool find_2048();
+    Tile* get_tile(int col, int row);
 };
 #endif // BOARD_H
