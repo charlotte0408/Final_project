@@ -3,8 +3,9 @@
 
 #include <QVector>
 #include <string>
-#include "tile.h"
 #include "subject.h"
+
+class Tile;
 
 enum Direction{Left, Right, Up, Down};
 
@@ -25,6 +26,7 @@ public:
     Board(int row = 3, int col = 3);
     Board(const Board&);
     virtual ~Board();
+    Board& operator=(const Board& b);
     void move(Direction d);
     void random();
     bool full();

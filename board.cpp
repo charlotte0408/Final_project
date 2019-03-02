@@ -2,6 +2,16 @@
 #include "tile.h"
 #include <QVector>
 
+Board& Board::operator=(const Board&b)
+{
+    for (int i = 0; i < 4; i++)
+        for (int j = 0; j < 4; j++)
+        {
+            delete board[i][j];
+            board[i][j] = new Tile(*(b.board[i][j]));
+        }
+    return *this;
+}
 bool Board::get_order()
 {
     return order;
@@ -35,11 +45,13 @@ Board::Board(const Board & b)
     for (int i = 0; i <= 3; i++)
         for (int j = 0; j <= 3; j++)
         {
-            Tile* t = new Tile(b.board[i][i]->get_value());
-            board[i][j] = t;
-        }
+            if (b.board[i][j] == nullptr)
+                board[i][j] = nullptr;
+            else {
+                board[i][j] = new Tile(*(b.board[i][j]));
+            }
+    }
 }
-
 Board :: ~Board()
 {
     for (int i = 0; i <= 3; i++)

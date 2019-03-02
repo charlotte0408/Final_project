@@ -1,6 +1,12 @@
 #include "qgameboard.h"
+#include "board.h"
+#include "game.h"
+#include "qtile.h"
+#include "tile.h"
 
-QGameboard :: QGameboard(QWidget *parent):QWidget(parent)
+#include <QGridLayout>
+
+QGameboard :: QGameboard(QWidget *parent): QWidget(parent)
 {
     game = new Game();
     board_layout = nullptr;
@@ -28,3 +34,14 @@ void QGameboard::drawboard()
         }
     }
 }
+
+QGameboard::~QGameboard()
+{
+    delete game;
+}
+
+/*void QGameboard::notify()
+{
+    if (game->won())
+        score->setText(QString("You hit 2048, congratulations! Keep playing to increase your score.\t\t SCORE: %1").arg(game->getScore()));
+}*/

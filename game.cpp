@@ -35,3 +35,8 @@ Board* Game::get_board()
 {
     return board;
 }
+
+Game::~Game()
+{
+    delete board;
+}

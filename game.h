@@ -13,6 +13,7 @@ private:
     Board* board;
 public:
     Game();
+    virtual ~Game();
     bool won();
     bool isover();
     int get_score();

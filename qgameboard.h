@@ -1,11 +1,13 @@
 #ifndef QGAMEBOARD_H
 #define QGAMEBOARD_H
 
+#include <QVector>
 #include <QWidget>
-#include <QGridLayout>
-#include "board.h"
-#include "game.h"
-#include "qtile.h"
+
+class Game;
+class QTile;
+class QGridLayout;
+
 class QGameboard : public QWidget
 {
 private:
@@ -14,10 +16,10 @@ private:
     QGridLayout* board_layout;
     void drawboard();
 public:
-    QGameboard(QWidget *parent = nullptr);
+    explicit QGameboard(QWidget *parent = nullptr);
     ~QGameboard();
-    void notify();
-    void keyPressEvent(QKeyEvent *event);
+    //void notify();
+    //void keyPressEvent(QKeyEvent *event);
 };
 
 #endif // QGAMEBOARD_H
