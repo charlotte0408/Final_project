@@ -19,7 +19,7 @@ public:
     explicit QGameboard(QWidget *parent = nullptr);
     ~QGameboard();
     //void notify();
-    //void keyPressEvent(QKeyEvent *event);
+    void keyPressEvent(QKeyEvent *event);
 };
 
 #endif // QGAMEBOARD_H

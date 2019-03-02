@@ -3,6 +3,11 @@
 #include "game.h"
 #include <QVector>
 
+void Game::move(Direction dir)
+{
+    board->move(dir);
+    notifyObservers();
+}
 Game::Game()
 {
     board = new Board();

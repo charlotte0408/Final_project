@@ -7,11 +7,15 @@ Board& Board::operator=(const Board&b)
     for (int i = 0; i < 4; i++)
         for (int j = 0; j < 4; j++)
         {
-            delete board[i][j];
-            board[i][j] = new Tile(*(b.board[i][j]));
+            if (board[i][j] != b.board[i][j])
+            {
+                delete board[i][j];
+                board[i][j] = new Tile(*(b.board[i][j]));
+            }
         }
     return *this;
 }
+
 bool Board::get_order()
 {
     return order;
@@ -69,6 +73,9 @@ void Board::move(Direction d)
         upmove();
     else
         downmove();
+    if (order == true)
+        random();
+    notifyObservers();
 }
 
 void Board::leftmove()

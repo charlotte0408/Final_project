@@ -6,6 +6,7 @@
 
 class Board;
 
+
 class Game: public Subject
 {
 private:
@@ -19,6 +20,7 @@ public:
     int get_score();
     void restart();
     Board* get_board();
+    void move(Direction dir);
 };
 
 #endif // GAME_H
