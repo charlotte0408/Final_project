@@ -38,7 +38,9 @@ HEADERS += \
     board.h \
     qtile.h \
     mainwindow.h \
-    qgameboard.h
+    qgameboard.h \
+    observer.h \
+    subject.h
 
 FORMS += \
         game.ui
