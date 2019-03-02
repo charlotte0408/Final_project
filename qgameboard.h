@@ -3,7 +3,8 @@
 
 #include <QVector>
 #include <QWidget>
-#include <QGame
+#include "qgameoverwindow.h"
+
 class Game;
 class QTile;
 class QGridLayout;
@@ -14,12 +15,13 @@ private:
     QVector<QVector<QTile*>> gui_board;
     Game* game;
     QGridLayout* board_layout;
-    QGameOverWindow gameOverWindow
+    QGameOverWindow gameOverWindow;
+    QGameOverWindow wonWindow;
     void drawboard();
 public:
     explicit QGameboard(QWidget *parent = nullptr);
     ~QGameboard();
-    //void notify();
+    void notify();
     void keyPressEvent(QKeyEvent *event);
 };
 

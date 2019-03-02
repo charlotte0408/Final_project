@@ -44,9 +44,9 @@ QGameboard::~QGameboard()
 void QGameboard::notify()
 {
     if (game->won())
-        score->setText(QString("You hit 2048, congratulations! Keep playing to increase your score.\t\t SCORE: %1").arg(game->getScore()));
+        wonWindow.show();
     if (game->isover())
-
+        gameOverWindow.show();
     drawboard();
 }
 
