@@ -20,6 +20,9 @@ void QGameboard::drawboard()
     for (int i = 0; i < 4; i++)
     {
         for (int j = 0; j < 4; j++)
-            gui_board[i][j] = new QTile()
+        {
+            gui_board[i][j] = new QTile(game->get_board()->get_tile(i,j));
+            board_layout->addWidget(gui_board[i][j],i,j);
+            gui_board[i][j]->draw();
     }
 }
