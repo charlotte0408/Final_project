@@ -2,10 +2,11 @@
 #define GAME_H
 
 #include "board.h"
+#include "subject.h"
 
 class Board;
 
-class Game
+class Game: public Subject
 {
 private:
     int score;

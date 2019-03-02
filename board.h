@@ -4,10 +4,11 @@
 #include <QVector>
 #include <string>
 #include "tile.h"
+#include "subject.h"
 
 enum Direction{Left, Right, Up, Down};
 
-class Board
+class Board : public Subject
 {
 private:
     QVector<QVector<Tile*>> board;
