@@ -1,23 +1,28 @@
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
 
-#ifndef GAME_H
-#define GAME_H
+#include "qgameboard.h"
 
 #include <QMainWindow>
 
+class QGameboard;
+
 namespace Ui {
-class game;
+class MainWindow;
 }
 
-class game : public QMainWindow
+class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit game(QWidget *parent = nullptr);
-    ~game();
+    explicit MainWindow(QWidget *parent = 0);
+    ~MainWindow();
 
 private:
-    Ui::game *ui;
+//    Ui::MainWindow *ui;
+    QGameboard *gameBoard;
+
 };
 
-#endif // GAME_H
+#endif // MAINWINDOW_H
