@@ -3,7 +3,7 @@
 
 #include <QVector>
 #include <QWidget>
-
+#include <QGame
 class Game;
 class QTile;
 class QGridLayout;
@@ -14,6 +14,7 @@ private:
     QVector<QVector<QTile*>> gui_board;
     Game* game;
     QGridLayout* board_layout;
+    QGameOverWindow gameOverWindow
     void drawboard();
 public:
     explicit QGameboard(QWidget *parent = nullptr);
