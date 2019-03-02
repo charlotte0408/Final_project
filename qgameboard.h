@@ -15,6 +15,9 @@ private:
     void draw();
 public:
     QGameboard(QWidget *parent = nullptr);
+    ~QGameboard();
+    void notify();
+    void keyPressEvent(QKeyEvent *event);
 };
 
 #endif // QGAMEBOARD_H
