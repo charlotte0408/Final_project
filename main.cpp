@@ -1,14 +1,21 @@
-#include "qgameboard.h"
-#include "qmainwindow.h"
+
 #include <QApplication>
-#include "tile.h"
-#include "qtile.h"
+
+#include <iostream>
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
+#include "board.h"
+#include "qgameboard.h"
+
+#include "qgameoverwindow.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     srand(time(nullptr));
 
-    QMainWindow window;
-    window.show();
+    QGameboard board;
+    board.show();
+
+    return a.exec();
 }
