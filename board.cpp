@@ -1,6 +1,7 @@
 #include "board.h"
 #include "tile.h"
 #include <QVector>
+#include <stdlib.h>
 
 Board& Board::operator=(const Board&b)
 {
@@ -53,12 +54,12 @@ Board::Board(const Board & b)
             board[i].push_back(b.board[i][j]);
     }
 }
-Board :: ~Board()
+/*Board :: ~Board()
 {
     for (int i = 0; i <= 3; i++)
         for (int j = 0; j <=3; j++)
             delete board[i][j];
-}
+}*/
 
 void Board::move(Direction d)
 {
@@ -77,8 +78,8 @@ void Board::move(Direction d)
 
 void Board::leftmove()
 {
-    //order = false;
-    /*for (int i = 0; i <= 3; i++) // loop through rows
+    order = false;
+    for (int i = 0; i <= 3; i++) // loop through rows
         {
             for (int j = 0; j< 3; j++) // start from the most left
             {
@@ -115,7 +116,7 @@ void Board::leftmove()
                     }
                 }
             }
-         }*/
+         }
 }
 
 void Board::rightmove()

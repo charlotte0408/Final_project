@@ -24,17 +24,17 @@ QGameboard :: QGameboard(QWidget *parent): QWidget(parent)
     for (int i = 0; i < 4; ++i)
         for (int j = 0; j < 4; ++j)
             gui_board[i][j] = nullptr;
+
     drawboard();
-    game->get_board()->random();
 }
 
 void QGameboard::drawboard()
 {
     delete board_layout;
     board_layout = new QGridLayout();
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i <=3; i++)
     {
-        for (int j = 0; j < 4; j++)
+        for (int j = 0; j <=3; j++)
         {
             delete gui_board[i][j];
             gui_board[i][j] = new QTile(game->get_board()->get_tile(i,j));

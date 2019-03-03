@@ -4,7 +4,7 @@
 
 QTile::QTile(Tile* t)
 {
-    tile = t;
+    this -> tile = t;
 }
 
 void QTile::draw()

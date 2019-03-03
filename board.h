@@ -25,7 +25,7 @@ private:
 public:
     Board(int row = 3, int col = 3);
     Board(const Board&);
-    virtual ~Board();
+    //~Board();
     Board& operator=(const Board& b);
     void move(Direction d);
     void random();
