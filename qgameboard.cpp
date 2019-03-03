@@ -4,6 +4,7 @@
 #include "qtile.h"
 #include "tile.h"
 
+#include <QDebug>
 #include <QGridLayout>
 #include <QKeyEvent>
 
@@ -24,6 +25,7 @@ QGameboard :: QGameboard(QWidget *parent): QWidget(parent)
         for (int j = 0; j < 4; ++j)
             gui_board[i][j] = nullptr;
     drawboard();
+    game->get_board()->random();
 }
 
 void QGameboard::drawboard()

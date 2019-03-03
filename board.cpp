@@ -80,8 +80,8 @@ void Board::move(Direction d)
 
 void Board::leftmove()
 {
-    order = false;
-    for (int i = 0; i <= 3; i++) // loop through rows
+    //order = false;
+    /*for (int i = 0; i <= 3; i++) // loop through rows
         {
             for (int j = 0; j< 3; j++) // start from the most left
             {
@@ -118,7 +118,7 @@ void Board::leftmove()
                     }
                 }
             }
-         }
+         }*/
 }
 
 void Board::rightmove()
@@ -248,7 +248,8 @@ int Board::right_find_nearest0(int row, int col)
 
 void Board::random()
 {
-    Board check (1,15);
+    vector<vector<int>> check;
+    check.resize(2);
         int count = 0;
         for (int i = 0; i <= 3; i++)
         {
@@ -256,8 +257,8 @@ void Board::random()
             {
                 if (board[i][j]->get_value() == 0)
                 {
-                    check.board[0][count]->set_value(i);
-                    check.board[1][count]->set_value(j);
+                    check[0].push_back(i);
+                    check[1].push_back(j);
                     count ++;
                 }
             }
@@ -269,8 +270,8 @@ void Board::random()
             next = 2;
         else
             next = 4;
-        int i = check.board[0][position]->get_value();
-        int j = check.board[1][position]->get_value();
+        int i = check[0][position];
+        int j = check[1][position];
         board[i][j]->set_value(next);
 }
 

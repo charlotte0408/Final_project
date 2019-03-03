@@ -12,6 +12,7 @@ Game::Game()
 {
     board = new Board();
     score = 0;
+    //board->random();
 }
 
 bool Game::isover()
