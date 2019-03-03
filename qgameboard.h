@@ -4,16 +4,18 @@
 #include <QVector>
 #include <QWidget>
 #include "qgameoverwindow.h"
-
+#include <QVBoxLayout>
+#include "observer.h"
 class Game;
 class QTile;
 class QGridLayout;
 
-class QGameboard : public QWidget
+class QGameboard : public QWidget, public Observer
 {
 private:
     QVector<QVector<QTile*>> gui_board;
     Game* game;
+    QVBoxLayout* mainLayout;
     QGridLayout* board_layout;
     QGameOverWindow gameOverWindow;
     QGameOverWindow wonWindow;

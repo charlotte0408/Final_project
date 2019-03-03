@@ -9,7 +9,13 @@
 
 QGameboard :: QGameboard(QWidget *parent): QWidget(parent)
 {
+    resize(650,450);
+    mainLayout = new QVBoxLayout;
+    setLayout(mainLayout);
+
     game = new Game();
+    game->registerObserver(this);
+
     board_layout = nullptr;
     gui_board.resize(4);
     for (int i = 0; i < 4; ++i)
@@ -34,6 +40,7 @@ void QGameboard::drawboard()
             gui_board[i][j]->draw();
         }
     }
+    mainLayout->insertLayout(0, board_layout);
 }
 
 QGameboard::~QGameboard()

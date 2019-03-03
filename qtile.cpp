@@ -15,7 +15,9 @@ void QTile::draw()
         setStyleSheet("QTile {background- color: yellow, border-width: 10px;}");
     }
     else {
+        setStyleSheet("QTile {background- color: yellow, border-width: 10px;}");
         setText(QString::number(tile->get_value()));
     }
+
 
 }
