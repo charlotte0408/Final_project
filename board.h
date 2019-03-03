@@ -18,8 +18,8 @@ private:
     void rightmove();
     void upmove();
     void downmove();
-    Board rotate_clock();
-    Board rotate_counterclock();
+    Board& rotate_clock();
+    Board& rotate_counterclock();
     int left_find_nearest0(int row, int col);
     int right_find_nearest0(int row, int col);
 public:

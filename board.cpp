@@ -46,14 +46,11 @@ Board::Board(int row, int col):order(false)
 Board::Board(const Board & b)
 {
     order = b.order;
+    board.resize(4);
     for (int i = 0; i <= 3; i++)
         for (int j = 0; j <= 3; j++)
         {
-            if (b.board[i][j] == nullptr)
-                board[i][j] = nullptr;
-            else {
-                board[i][j] = new Tile(*(b.board[i][j]));
-            }
+            board[i].push_back(b.board[i][j]);
     }
 }
 Board :: ~Board()
@@ -178,7 +175,7 @@ void Board::downmove()
     *this = A.rotate_clock();
 }
 
-Board Board::rotate_clock()
+Board& Board::rotate_clock()
 {
     for (int i = 0; i <= 3; i++)
         {
@@ -201,7 +198,7 @@ Board Board::rotate_clock()
         return *this;
 }
 
-Board Board::rotate_counterclock()
+Board& Board::rotate_counterclock()
 {
     for (int i = 0; i <= 3; i++)
         {
