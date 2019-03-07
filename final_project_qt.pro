@@ -30,17 +30,19 @@ SOURCES += \
     board.cpp \
     game.cpp \
     qtile.cpp \
-    qgameboard.cpp
+    qgameboard.cpp \
+    subject.cpp \
+    qgameoverwindow.cpp
 
 HEADERS += \
     tile.h \
     game.h \
     board.h \
     qtile.h \
-    mainwindow.h \
     qgameboard.h \
     observer.h \
-    subject.h
+    subject.h \
+    qgameoverwindow.h
 
 FORMS += \
         game.ui
