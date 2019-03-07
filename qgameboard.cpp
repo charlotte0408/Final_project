@@ -24,7 +24,7 @@ QGameboard :: QGameboard(QWidget *parent): QWidget(parent)
     for (int i = 0; i < 4; ++i)
         for (int j = 0; j < 4; ++j)
             gui_board[i][j] = nullptr;
-
+    setStyleSheet("QGameBoard { background-color: yellow }");
     drawboard();
 }
 

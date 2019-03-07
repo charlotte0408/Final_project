@@ -65,9 +65,9 @@ void Board::move(Direction d)
 {
     if (d == Left)
         leftmove();
-    if (d == Right)
+    else if (d == Right)
         rightmove();
-    if (d == Up)
+    else if (d == Up)
         upmove();
     else
         downmove();
@@ -122,7 +122,7 @@ void Board::leftmove()
 void Board::rightmove()
 {
     order = false;
-        for (int i = 0; i <= 3; i++)
+       for (int i = 0; i <= 3; i++)
         {
             for (int j = 3; j >= 1; j--) // start from the right most
             {
@@ -134,7 +134,8 @@ void Board::rightmove()
                 {
                     if (board[i][j]->get_value() == board[i][k]->get_value())
                     {
-                        board[i][j]->set_value(2*board[i][j]->get_value());
+                        int m = 2*board[i][j]->get_value();
+                        board[i][j]->set_value(m);
                         board[i][k]->set_value(0);
                         order = true;
                         break;
@@ -284,7 +285,7 @@ bool Board::full()
         return true;
 }
 
-Tile* Board::get_tile(int col, int row)
+Tile* Board::get_tile(int row, int col)
 {
-    return board[col][row];
+    return board[row][col];
 }
