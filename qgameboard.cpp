@@ -24,8 +24,9 @@ QGameboard :: QGameboard(QWidget *parent): QWidget(parent)
     for (int i = 0; i < 4; ++i)
         for (int j = 0; j < 4; ++j)
             gui_board[i][j] = nullptr;
-    setStyleSheet("QGameBoard { background-color: yellow }");
+    setStyleSheet("QWidget { background-color: rgb(187,173,160)}");
     drawboard();
+
 }
 
 void QGameboard::drawboard()
@@ -54,8 +55,9 @@ void QGameboard::notify()
 {
     if (game->won())
         wonWindow.show();
-    if (game->isover())
+    if (game->isover()){
         gameOverWindow.show();
+    }
     drawboard();
 }
 

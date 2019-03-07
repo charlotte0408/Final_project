@@ -4,7 +4,7 @@
 
 QGameOverWindow::QGameOverWindow(QWidget *parent):QWidget(parent)
 {
-    setStyleSheet("QGameOverWindow { background: rgb(237,224,200); }");
+    setStyleSheet("QWidget { background-color: rgb(237,224,200); }");
     setFixedSize(425,205);
     QVBoxLayout *layout = new QVBoxLayout(this);
     // game over label

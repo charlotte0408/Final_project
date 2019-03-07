@@ -42,6 +42,37 @@ void QTile::draw()
             setText(QString::number(tile->get_value()));
             break;
         }
+        case 64:{
+            setStyleSheet("QLabel { background: rgb(236,120,81); color: black; font: bold; border-radius: 10px; font: 40pt; }");
+            setText(QString::number(tile->get_value()));
+            break;
+        }
+        case 128:{
+            setStyleSheet("QLabel { background: rgb(233,214,120); color: black; font: bold; border-radius: 10px; font: 40pt; }");
+            setText(QString::number(tile->get_value()));
+            break;
+        }
+        case 256:{
+            setStyleSheet("QLabel { background: rgb(234,213,120); color: black; font: bold; border-radius: 10px; font: 40pt; }");
+            setText(QString::number(tile->get_value()));
+            break;
+        }
+        case 512:{
+            setStyleSheet("QLabel { background: rgb(234,214,119); color: black; font: bold; border-radius: 10px; font: 40pt; }");
+            setText(QString::number(tile->get_value()));
+            break;
+        }
+        case 1024:{
+            setStyleSheet("QLabel { background: rgb(233,214,119); color: black; font: bold; border-radius: 10px; font: 40pt; }");
+            setText(QString::number(tile->get_value()));
+            break;
+        }
+        case 2048:{
+            setStyleSheet("QLabel { background: rgb(233,106,73); color: black; font: bold; border-radius: 10px; font: 40pt; }");
+            setText(QString::number(tile->get_value()));
+            break;
+        }
+
      }
 
 

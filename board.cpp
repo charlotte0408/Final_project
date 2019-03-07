@@ -262,6 +262,7 @@ void Board::random()
                 }
             }
         }
+        if (count > 1){
         int position = rand() % (count - 1);
         int rn = rand() % 9;
         int next = 0;
@@ -272,6 +273,13 @@ void Board::random()
         int i = check[0][position];
         int j = check[1][position];
         board[i][j]->set_value(next);
+
+        }
+        else {
+            int i = check[0][0];
+            int j = check[1][0];
+            board[i][j]->set_value(2);
+        }
 }
 
 bool Board::full()
