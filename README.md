@@ -9,7 +9,7 @@ This is the description about how my project goes and what I learn from this pro
 *   [GUI algorithm in QT][gui] 
 
 [description]: Description/
-[console]: Final_project/
+[console]: Final_project_xcode/
 [core]: Core/
 [gui]: GUI/
 
