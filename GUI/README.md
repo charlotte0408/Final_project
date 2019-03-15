@@ -11,7 +11,7 @@
 
     Moreover, I gained ideas about how to change colors of these tiles, but they were still not working. However, I decided to first implement other parts and then go back to fix the error.
 
-* Starting to implement the **QGamebaord** class, **STUCK** for really a long time because I cannot find the logic in my implementation
+* Start to implement **QGamebaord** class, **STUCK** for really a long time because I cannot find the logic in my implementation
     * Every time I move the board, several checks should be done at the same time, including whether it is full, the player has won, or just draw the board again. 
     * Thinking about the implementing in the main function, but as it is a QT project, the main function should also deal with the window->show thing, and I don’t want to mess my algorithms up. 
     * Also, I remembered earlier that my pic 10b professor said that the advanced version of programming is to implement almost everything in class, but not in the main function. 
@@ -30,3 +30,17 @@ Choose grid layout for the matrix
  https://doc.qt.io/archives/qt-4.8/qt-tutorials-widgets-windowlayout-example.html
 Learn the keyboard press event, namely how to connect keyboard signals to the movements
 https://stackoverflow.com/questions/23137187/qt-is-there-a-way-to-emit-a-signal-when-a-particular-key-is-typed
+
+* **Debugging proces**
+    * **Stuck** for a long time when try to compile due to the error: 
+    > non-virtual thunk to <method name>”, referenced from: Vtable for <classname>in <objectfile.o>
+        * Looked online, the error should be that I didn’t implement all the member functions defined in the header files. 
+        * Although the error is trivial, but when examining the code, I figured out that I didn’t implement the big four for the board class, which deals with heap memory management. 
+    * **Stuck** for another long time 
+        * though the program works, it doesn’t work in the way 2048 should work, which means LEFT and RIGHT are not the right pattern, but UP and DOWN are. 
+        * Confused because UP and DOWN were built based on LEFT and RIGHT 
+        * So, there must be something wrong with the keyboard press 
+        * After using the debugging tools that I discovered in the core implementation process, I **figured out** the problem is because I used if instead of else if, which may caused double actions
+    * Now after searching more online about setstylesheet, I can show my game **in color**. 
+        * But one more thing is left with the game over window. The program didn’t pop up the window, but quited unexpectedly. 
+        * Reading the report, figured out there is something wrong with the random function, when there is only one position left, the random function doesn’t work, therefore, the program quits and the pop up window doesn’t show up.
