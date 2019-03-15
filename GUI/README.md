@@ -24,16 +24,16 @@
     I added two more classes for this patter, subject and observer.
     
 * Learn about **QT-related tools** 
-Research and compare different layouts to find the most suitable for matrix and overall windows
-Choose grid layout for the matrix
- https://doc.qt.io/archives/qt-4.8/qgridlayout.html
- https://doc.qt.io/archives/qt-4.8/qt-tutorials-widgets-windowlayout-example.html
-Learn the keyboard press event, namely how to connect keyboard signals to the movements
-https://stackoverflow.com/questions/23137187/qt-is-there-a-way-to-emit-a-signal-when-a-particular-key-is-typed
+    * Research and compare different layouts to find the most suitable for matrix and overall windows
+    * Choose grid layout for the matrix
+    > https://doc.qt.io/archives/qt-4.8/qgridlayout.html
+    > https://doc.qt.io/archives/qt-4.8/qt-tutorials-widgets-windowlayout-example.html
+    * Learn the keyboard press event, namely how to connect keyboard signals to the movements
+    > https://stackoverflow.com/questions/23137187/qt-is-there-a-way-to-emit-a-signal-when-a-particular-key-is-typed
 
 * **Debugging proces**
     * **Stuck** for a long time when try to compile due to the error: 
-    > non-virtual thunk to <method name>”, referenced from: Vtable for <classname>in <objectfile.o>
+    non-virtual thunk to <method name>”, referenced from: Vtable for <classname>in <objectfile.o>
         * Looked online, the error should be that I didn’t implement all the member functions defined in the header files. 
         * Although the error is trivial, but when examining the code, I figured out that I didn’t implement the big four for the board class, which deals with heap memory management. 
     * **Stuck** for another long time 
