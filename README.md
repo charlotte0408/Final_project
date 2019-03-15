@@ -8,7 +8,7 @@ This is the description about how my project goes and what I learn from this pro
 *   [GUI algorithm in QT][gui] 
 
 [description]: Description/
-[core]: Final_project/
+[core]: Core/
 [gui]: GUI/
 
 ##  What I gain from this Project 
