@@ -3,6 +3,9 @@
 My final project is the algorithm implementation of game 2048 in both console and qt environment.
 The following contains the description and what I learn from this project. 
 
+##  Demo
+>   https://www.youtube.com/watch?v=ZKvhAV8I6-Y
+
 ##  Description and Code 
 *   [Description of my final project][description] 
 *   [CORE algorithm (Console version)][console] 
