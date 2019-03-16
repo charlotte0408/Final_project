@@ -1,4 +1,4 @@
-# Final Project(GAME 20148) Learning Process
+# Final Project(GAME 2048) Learning Process
 
 My final project is the algorithm implementation of game 2048 in both console and qt environment.
 The following contains the description and what I learn from this project. 
