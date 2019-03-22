@@ -40,6 +40,6 @@
         * Confused because UP and DOWN were built based on LEFT and RIGHT 
         * So, there must be something wrong with the keyboard press 
         * After using the debugging tools that I discovered in the core implementation process, I **figured out** the problem is because I used if instead of else if, which may caused double actions
-    * Now after searching more online about setstylesheet, I can show my game **in color**. 
+    * Now after searching more online about setstylesheet, I can show my game **in color**. -> **MILESTONE**
         * But one more thing is left with the game over window. The program didn’t pop up the window, but quited unexpectedly. 
         * Reading the report, figured out there is something wrong with the random function, when there is only one position left, the random function doesn’t work, therefore, the program quits and the pop up window doesn’t show up.
