@@ -15,7 +15,7 @@
     * Thinking about the implementing in the main function, but as it is a QT project, the main function should also deal with the window->show thing, and I don’t want to mess my algorithms up. 
     * Also, I remembered earlier that my pic 10b professor said that the advanced version of programming is to implement almost everything in class, but not in the main function. 
     * So I searched online for ways to implement and also asked TA for help. 
-    * **Finally**, I figured out that I could implement my project with Observer and Subject pattern, which allowed me to deal with the one-to-many dependency relation. Following are the links that TA suggested or I searched online. 
+    * **Finally**, I figured out that I could implement my project with **Observer and Subject** pattern, which allowed me to deal with the one-to-many dependency relation. Following are the links that TA suggested or I searched online. 
     > https://en.wikipedia.org/wiki/Observer_pattern
     > https://www.geeksforgeeks.org/observer-pattern-set-1-introduction/
     > https://www.oodesign.com/observer-pattern.html
